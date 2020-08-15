@@ -1,0 +1,34 @@
+
+
+
+<div class="jumbotron" style="padding:45px 0px; background-color: rgb(38, 207, 212); " >
+    <div  class="align-content-center " >
+        <img style="margin-left: 40% ;" src="assets/Images/ico-logo.png" alt="Logo"/>
+    </div>
+    <h4 class="text-center">Front Test</h4>
+    <h4 class="text-center"> To Do List App Adelina   </h4>
+    </div>
+    <div class="input-group">
+    <input type="text" class="form-control" #itemTitle>    
+    <div class="input-group-addon hover-cursor" (click)="onAdd(itemTitle)">
+        <i class="fa fa-plus-circle fa-2x"></i>
+    </div>
+    </div>
+    <div style="margin:5px 0px">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of toDoListArray">
+                <spam class="hover-cursor" [class.text-success]="item.isChecked" (click)="alterCheck(item.$key,item.isChecked)">
+                    <i class="fa fa-lg" [ngClass]="item.isChecked?'fa-check-circle-o':'fa-circle-thin'"></i>
+                </spam>
+                {{item.title}}
+                <span class="hover-cursor text-danger pull-right" (click)="onDelete(item.$key)" >
+                    <i class="fa fa-trash-o fa-lg"></i>
+                    
+                </span>
+
+            </li>
+        </ul>
+
+
+    </div>
+ 
